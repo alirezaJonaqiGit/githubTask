@@ -4,8 +4,20 @@ import styles from './repositories.module.scss'
 import cardStyles from '@/styles/pages/popular.module.scss'
 import {LoadingSpinner} from "@/components";
 
-const Repositories = ({userId}) => {
-    const [repositories, setRepositories] = useState([]);
+interface RepositoriesProps {
+    userId: string;
+    forks_count: number;
+    stargazers_count: number;
+    updated_at: string;
+    id: number;
+    clone_url: string;
+    name: string;
+    description: string;
+}
+
+
+const Repositories: React.FC<RepositoriesProps> = ({userId}) => {
+    const [repositories, setRepositories] = useState<RepositoriesProps[]>([]);
     const [loading, setLoading] = useState(true);
     const [filterType, setFilterType] = useState('');
 
@@ -33,10 +45,10 @@ const Repositories = ({userId}) => {
     };
 
     const filterByLastUpdate = () => {
-        return repositories.sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
+        return repositories.sort((a, b) => new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime());
     };
 
-    const handleFilterClick = (filterType) => {
+    const handleFilterClick = (filterType: string) => {
         setFilterType(filterType);
     };
 

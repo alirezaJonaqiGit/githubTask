@@ -5,10 +5,16 @@ import cardStyles from "@/styles/pages/popular.module.scss";
 import loadingStyles from "@/styles/pages/username.module.scss"
 import {Header, LoadingSpinner} from "@/components";
 
-
-const GitHubPopularRepositories = () => {
-    const [repositories, setRepositories] = useState([]);
-    const [filteredRepositories, setFilteredRepositories] = useState([]);
+interface Repository {
+    name: string;
+    id: number;
+    html_url: string;
+    description: string;
+    stargazers_count: number;
+}
+const GitHubPopularRepositories: React.FC = () => {
+    const [repositories, setRepositories] = useState<Repository[]>([]);
+    const [filteredRepositories, setFilteredRepositories] = useState<Repository[]>([]);
     const [inputValue, setInputValue] = useState('');
     const [loading, setLoading] = useState(true);
 
