@@ -94,7 +94,7 @@ const UserProfile: React.FC<UserProfileProps> = () => {
                     </aside>
                     <section className={styles.userInfo__repositoriesWrapper}>
                         <Repositories
-                            userId={userData.userId}
+                            userId={username}
                             forks_count={userData.forks_count}
                             stargazers_count={userData.stargazers_count}
                             updated_at={userData.updated_at}

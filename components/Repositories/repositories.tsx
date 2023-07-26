@@ -20,7 +20,6 @@ const Repositories: React.FC<RepositoriesProps> = ({userId}) => {
     const [repositories, setRepositories] = useState<RepositoriesProps[]>([]);
     const [loading, setLoading] = useState(true);
     const [filterType, setFilterType] = useState('');
-
     useEffect(() => {
         const fetchRepositories = async () => {
             try {
@@ -63,9 +62,6 @@ const Repositories: React.FC<RepositoriesProps> = ({userId}) => {
         filteredRepositories = repositories;
     }
 
-    if (repositories.length === 0 && !loading) {
-        return <div>No repositories found for the user.</div>;
-    }
 
 
     return (
