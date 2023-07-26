@@ -1,0 +1,35 @@
+@import "@/styles/variables.scss";
+
+.mainHeader {
+  background-color: lighten(color(body), 9);
+  padding: 1rem 0;
+  border-bottom: 1px solid color(text, .2);
+
+  .mainHeaderInner {
+    .mainHeaderList {
+      display: flex;
+
+      .mainHeaderListItem {
+        margin-right: 1.5rem;
+
+        .link {
+          color: color(text);
+          font-size: 1rem;
+
+          &:hover {
+            text-decoration: underline;
+          }
+
+          @include media(lg) {
+            font-size: 1.1rem;
+          }
+        }
+      }
+    }
+  }
+
+  @include media(lg) {
+    padding: 1.1rem 0;
+  }
+}
+

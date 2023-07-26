@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap');
+
+$colors: (
+        primary: #1f6feb,
+        body: #0d1117,
+        section:#21262d,
+        text:#e6edf3,
+        light: #fff,
+        dark: #000,
+);
+
+@function color($color: primary, $opacity: 1) {
+  $hex: map-get($map: $colors, $key: $color);
+  $rgb: rgba(red($hex), green($hex), blue($hex), $opacity);
+  @return $rgb;
+}
+
+$grid-breakpoints: (
+        xs: 0,
+        sm: 576px,
+        md: 768px,
+        lg: 992px,
+        xl: 1200px,
+        xxl: 1400px
+);
+
+@function breakpoint($breakpoint) {
+  @return map-get($map: $grid-breakpoints, $key: $breakpoint);
+}
+
+@mixin media($query: lg) {
+  @media screen and (min-width: breakpoint($query)) {
+    @content;
+  }
+}
+
+.wrapper {
+  padding: 0 1rem;
+  @include media(lg) {
+    padding: 0;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+}

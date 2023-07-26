@@ -1,0 +1,47 @@
+@import "@/styles/variables.scss";
+
+.heroWrapper {
+  .hero {
+    .heroTitle {
+      font-size: 1.5rem;
+      text-align: center;
+      font-weight: 600;
+      margin-top: 3rem;
+      margin-bottom: 2.5rem;
+      @include media(lg) {
+        margin-bottom: 3.5rem;
+        margin-top: 5rem;
+        font-size: 2rem;
+      }
+    }
+
+    .hero__searchBar {
+      display: flex;
+      justify-content: center;
+
+      .hero__searchBarInput {
+        display: block;
+        flex-grow: 1;
+        padding: .5rem 1rem;
+        border-radius: .5rem;
+        background-color: color(text, .2);
+        outline: none;
+        @include media(md) {
+          max-width: 350px;
+          padding: .8rem 1.5rem;
+        }
+      }
+
+      .heroSearchBarAction {
+        display: block;
+        margin-left: 1rem;
+        padding: .5rem 2rem;
+        background-color: color(primary);
+        border-radius: .5rem;
+      }
+
+
+    }
+  }
+
+}

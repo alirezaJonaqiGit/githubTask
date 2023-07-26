@@ -1,0 +1,114 @@
+@import "@/styles/variables.scss";
+
+.nothingWasFound {
+  text-align: center;
+  color: lighten(color(primary), 30);
+}
+
+.popularReposWrapper {
+  padding: 0 1rem;
+
+  .popularReposTitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin: 2rem 0 1.5rem;
+    @include media(lg) {
+      margin: 3rem 0 2rem;
+      font-size: 2rem;
+    }
+  }
+
+  .popularReposFilterInput {
+    display: block;
+    width: 100%;
+    padding: .5rem 1rem;
+    border-radius: .5rem;
+    background-color: color(text, .1);
+    outline: none;
+    margin-bottom: 3rem;
+    @include media(lg) {
+      padding: .8rem 1.5rem;
+      max-width: 450px;
+      margin: 0 auto;
+      margin-bottom: 5rem;
+
+    }
+  }
+
+  @include media(lg) {
+    padding: 0;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+}
+
+.repositoriesList {
+  padding: 0;
+  margin: 1rem 0 0;
+  display: block;
+  list-style-type: none;
+
+  .repositoriesListItem {
+    padding: 1rem;
+    display: block;
+    box-sizing: border-box;
+    border: 1px solid color(text, .15);
+    margin-bottom: 16px;
+    border-radius: .5rem;
+
+    &:hover {
+      background-color: lighten(color(body), 2);
+    }
+
+    .repositoriesListItemLink {
+      color: lighten(color(primary), 5);
+      text-decoration: none;
+      display: block;
+      width: max-content;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .repositoriesListItemDescription {
+      font-size: 13px;
+      color: color(text, .7);
+      margin: 0;
+
+    }
+
+    .repositoriesListItemLink + .repositoriesListItemDescription {
+      margin-top: .5rem;
+    }
+
+    .repositoriesListItemStarCounts {
+      display: block;
+      margin-top: .5rem;
+      font-size: .8rem;
+      color: color(text, .9);
+
+      &::before {
+        content: 'stars: ';
+        color: color(text, .5);
+      }
+    }
+
+    .repositoriesListItemDescription + .repositoriesListItemStarCounts {
+      margin-top: 1rem;
+    }
+
+    @include media(lg) {
+      &:nth-child(even) {
+        margin-left: 16px;
+      }
+      flex-basis: calc(50% - 8px);
+    }
+  }
+
+  @include media(lg) {
+    display: flex;
+    flex-flow: row wrap;
+  }
+}

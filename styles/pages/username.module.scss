@@ -1,0 +1,137 @@
+@import "@/styles/variables.scss";
+
+.fullPageLoadingWrapper {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.userNotFoundWrapper {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  padding: 2rem 0;
+
+  .userNotFound__title {
+    font-size: 1.2rem;
+    display: block;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  .userNotFound__link {
+    font-size: .9rem;
+    color: color(primary);
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.userInfoWrapper {
+  padding: 2rem 1rem 0;
+
+
+  .userInfo {
+    min-height: 100vh;
+
+    .userInfo__card {
+      border-bottom: 1px solid color(text, .1);
+
+      .userInfo__stickTop {
+        margin-bottom: 1.5rem;
+        @include media(lg) {
+          background-color: lighten(color(body), 5);
+          border: 1px solid color(text, .1);
+          padding: 1rem;
+          border-radius: .5rem;
+          position: sticky;
+          top: 2rem;
+        }
+      }
+
+      .userInfo__cardAvatarWrapper {
+        display: flex;
+        align-items: center;
+        align-content: center;
+
+        .userInfo__cardAvatar {
+          display: block;
+          width: 20vw;
+          height: 20vw;
+          max-width: 280px;
+          max-height: 280px;
+          border-radius: 50%;
+          border: 2px solid color(text, .2);
+          pointer-events: none;
+          user-select: none;
+          @include media(lg) {
+            margin-bottom: 1rem;
+          }
+        }
+
+        .userInfo__cardUserNameWrapper {
+          padding-left: 1rem;
+
+          .userInfo__cardUserName {
+            display: block;
+            margin: 0 0 .5rem;
+            color: #e6edf3;
+            font-size: 1.3rem;
+            font-weight: 800;
+            @include media(lg) {
+              font-size: 1.7rem;
+              margin-bottom: .1rem;
+            }
+          }
+
+          .userInfo__cardUserId {
+            display: block;
+            font-size: 1rem;
+            font-weight: 300;
+            color: color(text, .5);
+            @include media(lg) {
+              font-size: 1.2rem;
+            }
+          }
+
+          @include media(lg) {
+            margin-bottom: 2rem;
+            padding-left: 0;
+          }
+        }
+
+        @include media(lg) {
+          display: block;
+        }
+      }
+
+      @include media(lg) {
+        flex-basis: 25%;
+        flex-shrink: 0;
+        transition: width .1s linear 0s;
+        border-bottom: none;
+      }
+    }
+
+    .userInfo__repositoriesWrapper {
+      padding-top: 1.5rem;
+      @include media(lg) {
+        flex-basis: 75%;
+      }
+    }
+
+    @include media(lg) {
+      display: flex;
+    }
+  }
+
+  @include media(lg) {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem 0 0;
+  }
+
+}

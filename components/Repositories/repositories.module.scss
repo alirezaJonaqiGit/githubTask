@@ -1,0 +1,17 @@
+@import "@/styles/variables.scss";
+
+.repositoriesWrapper {
+  .repositoriesTitle {
+    font-weight: 500;
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    @include media(lg) {
+      font-weight: 600;
+      font-size: 1.5rem;
+    }
+  }
+
+  @include media(lg) {
+    padding-left: 2rem;
+  }
+}
